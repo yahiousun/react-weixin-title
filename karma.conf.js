@@ -1,4 +1,5 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(config) {
   config.set({
@@ -55,6 +56,15 @@ module.exports = function(config) {
               path.join(__dirname, 'src'),
               path.join(__dirname, 'test')
             ]
+          }, {
+            test: /\.scss$/,
+            loader: 'style!css!postcss!sass'
+          }, {
+            test: /\.css/,
+            loader: ExtractTextPlugin.extract('style', 'css', 'postcss')
+          }, {
+            test: /\.(png|jpg)$/,
+            loader: 'url?limit=25000'
           },
           {
             test: /\.json$/,

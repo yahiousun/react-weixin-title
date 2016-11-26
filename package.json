@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js --hot --inline --progress --colors --port 8080",
     "build:example": "rimraf ./dist && webpack --config webpack.config.example.js --progress --colors -p",
-    "lint": "eslint ./src ./example",
+    "lint": "eslint ./src ./example ./test",
     "test": "karma start"
   },
   "author": "yahiousun <yahiousun@gmail.com>",
