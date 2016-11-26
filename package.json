@@ -4,15 +4,27 @@
   "description": "Provides a declarative way to specify document.title in weixin for iOS.",
   "repository": "yahiousun/react-weixin-title",
   "main": "scr/index.js",
+  "babel": {
+    "presets": [
+      "latest",
+      "stage-0",
+      "react"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ]
+  },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js --hot --inline --progress --colors --port 8080",
+    "build": "node tools/build",
     "build:example": "rimraf ./dist && webpack --config webpack.config.example.js --progress --colors -p",
     "lint": "eslint ./src ./example ./test",
+    "start": "webpack-dev-server --config webpack.config.dev.js --hot --inline --progress --colors --port 8080",
     "test": "karma start"
   },
   "author": "yahiousun <yahiousun@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-runtime": "^6.11.6",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-router": "^3.0.0"
@@ -24,12 +36,15 @@
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.8",
+    "babel-plugin-transform-runtime": "^6.15.0",
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
     "chai": "^3.5.0",
     "css-loader": "^0.26.0",
+    "del": "^2.2.2",
     "enzyme": "^2.6.0",
     "eslint": "^3.11.0",
     "eslint-config-airbnb": "^13.0.0",
@@ -60,6 +75,8 @@
     "react-addons-test-utils": "^15.4.1",
     "react-syntax-highlighter": "^3.0.0",
     "rimraf": "^2.5.4",
+    "rollup": "^0.36.4",
+    "rollup-plugin-babel": "^2.6.1",
     "sass-loader": "^4.0.2",
     "sinon": "^1.17.6",
     "style-loader": "^0.13.1",
