@@ -26,7 +26,7 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <WeixinTitle title={this.state.title} src="/favicon.ico">
+      <WeixinTitle title={this.state.title} src="/react-weixin-title/favicon.ico">
         <div className="page">
           <h2>React Weixin Title</h2>
           <p className="site-description">Provides a declarative way to specify document.title in a single-page app.  

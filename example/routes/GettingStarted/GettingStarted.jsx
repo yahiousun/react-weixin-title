@@ -7,7 +7,7 @@ import { WeixinTitle } from '../../../src';
 class GettingStarted extends React.Component {
   render() {
     return (
-      <WeixinTitle title="Getting Started" src="/favicon.ico">
+      <WeixinTitle title="Getting Started" src="/react-weixin-title/favicon.ico">
         <div className="page">
           <h2>Installation</h2>
           <p>Via <a href="https://www.npmjs.com/" target="_blank">npm</a>:</p>

@@ -10,7 +10,7 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: {
     js: ['./index.jsx'],
-    vendor: ['react', 'react-router', 'react-dom', 'react-addons-css-transition-group'],
+    vendor: ['react', 'react-router', 'react-dom', 'react-addons-css-transition-group'. 'react-syntax-highlighter'],
   },
   output: {
     path: path.resolve(__dirname, 'dist/example'),

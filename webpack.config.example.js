@@ -7,14 +7,15 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, 'example'),
-  devtool: 'sourcemap',
+  devtool: 'source-map',
   entry: {
-    js: ['./index.jsx'],
-    vendor: ['react', 'react-router', 'react-dom', 'react-addons-css-transition-group'],
+    js: ['babel-polyfill', './index.jsx'],
+    vendor: ['react', 'react-router', 'react-dom', 'react-addons-css-transition-group', 'react-syntax-highlighter'],
   },
   output: {
     path: path.resolve(__dirname, 'dist/example'),
-    filename: './bundle.js',
+    filename: "[hash].bundle.js",
+    chunkFilename: "[id].[hash].bundle.js",
   },
   module: {
     loaders: [
@@ -25,6 +26,7 @@ module.exports = {
         query: {
           cacheDirectory: true,
           presets: ['latest', 'stage-0', 'react'],
+          plugins: ['transform-runtime']
         },
       }, {
         test: /\.scss$/,
@@ -34,7 +36,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style', 'css', 'postcss'),
       }, {
         test: /\.(png|jpg)$/,
-        loader: 'url?limit=25000',
+        loader: 'url?limit=8192',
       },
     ],
   },
@@ -48,7 +50,7 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', '[hash].vendor.bundle.js'),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'example/index.html'),
       favicon: path.join(__dirname, 'example/favicon.ico'),
