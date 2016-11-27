@@ -1,6 +1,6 @@
 {
   "name": "react-weixin-title",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Provides a declarative way to specify document.title in weixin for iOS.",
   "repository": "yahiousun/react-weixin-title",
   "main": "scr/index.js",
