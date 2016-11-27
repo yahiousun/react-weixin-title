@@ -44,7 +44,7 @@ render((
           <h3>Or use WeixinTitle component</h3>
           <SyntaxHighlighter language='javascript' style={monokaiSublime}>
           {`import React from 'react';
-import {WeixinTitle} from 'react-weixin-title';
+import { WeixinTitle } from 'react-weixin-title';
 
 const title = 'your title here'; //your title here
 const src = '/favicon.ico'; //a valid url, i.e. favicon.ico

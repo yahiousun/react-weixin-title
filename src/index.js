@@ -7,5 +7,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import WeixinTitle from './WeixinTitle';
+import ChangeWeixinTitle from './ChangeWeixinTitle';
+
 export WeixinTitle from './WeixinTitle';
+
 export ChangeWeixinTitle from './ChangeWeixinTitle';
+
+export default {
+  WeixinTitle,
+  ChangeWeixinTitle,
+};

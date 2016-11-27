@@ -39,7 +39,7 @@ Or use WeixinTitle component
 import React from 'react';
 import {WeixinTitle} from 'react-weixin-title';
 
-const title = 'your title here';
+const title = 'your title here'; //your title here
 const src = '/favicon.ico'; //a valid url, i.e. favicon.ico
 
 class Demo extends React.Component {
