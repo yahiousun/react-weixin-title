@@ -21,6 +21,7 @@ class GettingStarted extends React.Component {
             {`import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { ChangeWeixinTitle } from 'react-weixin-title';
 
 import App from './containers/App';
 import Home from './routes/Home';
