@@ -14,6 +14,7 @@ Assuming you use something like [react-router](https://github.com/ReactTraining/
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { ChangeWeixinTitle } from 'react-weixin-title';
 
 import App from './containers/App';
 import Home from './routes/Home';
@@ -37,7 +38,7 @@ Or use WeixinTitle component
 
 ```javascript
 import React from 'react';
-import {WeixinTitle} from 'react-weixin-title';
+import { WeixinTitle } from 'react-weixin-title';
 
 const title = 'your title here'; //your title here
 const src = '/favicon.ico'; //a valid url, i.e. favicon.ico
