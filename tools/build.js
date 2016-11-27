@@ -18,7 +18,7 @@ const pkg = require('../package.json');
 let promise = Promise.resolve();
 
 // Clean up the output directory
-promise = promise.then(() => del(['lib/*']));
+promise = promise.then(() => del(['dist/lib/*']));
 
 // Compile source code into a distributable format with Babel
 ['es', 'cjs', 'umd'].forEach((format) => {
@@ -32,7 +32,7 @@ promise = promise.then(() => del(['lib/*']));
       presets: pkg.babel.presets.map(x => (x === 'latest' ? ['latest', { es2015: { modules: false } }] : x)),
     }))],
   }).then(bundle => bundle.write({
-    dest: `lib/${format === 'cjs' ? 'index' : `index.${format}`}.js`,
+    dest: `dist/lib/${format === 'cjs' ? 'index' : `index.${format}`}.js`,
     format,
     sourceMap: true,
     moduleName: format === 'umd' ? pkg.name.replace(/-([a-z])/g, match => match[1].toUpperCase()) : undefined,
@@ -51,13 +51,13 @@ promise = promise.then(() => {
   Object.assign(pkg, {
     main: 'index.js',
     'jsnext:main': 'index.es.js',
-    typings: 'index.d.ts',
+    //typings: 'index.d.ts',
   });
 
-  fs.writeFileSync('lib/package.json', JSON.stringify(pkg, null, '  '), 'utf-8');
+  fs.writeFileSync('dist/lib/package.json', JSON.stringify(pkg, null, '  '), 'utf-8');
   //fs.writeFileSync('lib/index.d.ts', fs.readFileSync('typings/index.d.ts', 'utf-8'), 'utf-8');
-  fs.writeFileSync('lib/LICENSE', fs.readFileSync('LICENSE', 'utf-8'), 'utf-8');
-  fs.writeFileSync('lib/README.md', fs.readFileSync('README.md', 'utf-8'), 'utf-8');
+  fs.writeFileSync('dist/lib/LICENSE', fs.readFileSync('LICENSE', 'utf-8'), 'utf-8');
+  fs.writeFileSync('dist/lib/README.md', fs.readFileSync('README.md', 'utf-8'), 'utf-8');
 });
 
 promise.catch(err => console.error(err.stack)); // eslint-disable-line no-console

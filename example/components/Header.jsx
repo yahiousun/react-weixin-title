@@ -9,7 +9,7 @@ class Header extends React.Component {
           <nav className="nav">
             <Link to="/" className="nav-item">Home</Link>
             <Link to="/getting-started" className="nav-item" activeClassName="active">Getting Started</Link>
-            <a href="https://github.com/yahiousun/react-weixin-title" className="nav-item">Docs</a>
+            <a href="https://github.com/yahiousun/react-weixin-title" className="nav-item">View on GitHub</a>
           </nav>
         </div>
       </header>

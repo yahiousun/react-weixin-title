@@ -29,7 +29,8 @@ class Home extends React.Component {
       <WeixinTitle title={this.state.title} src="/favicon.ico">
         <div className="page">
           <h2>React Weixin Title</h2>
-          <p className="site-description">Provides a declarative way to specify document.title in weixin for iOS.</p>
+          <p className="site-description">Provides a declarative way to specify document.title in a single-page app.  
+This component can be used on weixin for iOS as well.</p>
           <div className="demo">
             <form className="demo-form" onSubmit={this.handleSubmit}>
               <input type="text" value={this.state.title} className="demo-input" onChange={this.handleChange} autoFocus="true" />
@@ -41,7 +42,7 @@ class Home extends React.Component {
               <img src={require('../../images/qrcode.jpg')} width="200" height="200" />
             </p>
           </div>
-          <h2>参考</h2>
+          <h2>References</h2>
           <ul className="listview">
             <li><a href="https://www.zhihu.com/question/27849091#" target="_blank">微信前端开发有哪些坑或者黑魔法？</a></li>
           </ul>

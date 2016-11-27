@@ -15,8 +15,9 @@
     ]
   },
   "scripts": {
-    "build": "node tools/build",
-    "build:example": "rimraf ./dist && webpack --config webpack.config.example.js --progress --colors -p",
+    "build": "npm run build:lib && npm run build:example",
+    "build:lib": "node tools/build",
+    "build:example": "del ./dist/example && webpack --config webpack.config.example.js --progress --colors -p",
     "lint": "eslint ./src ./example ./test",
     "start": "webpack-dev-server --config webpack.config.dev.js --hot --inline --progress --colors --port 8080",
     "test": "karma start"
@@ -45,6 +46,7 @@
     "chai": "^3.5.0",
     "css-loader": "^0.26.0",
     "del": "^2.2.2",
+    "del-cli": "^0.2.0",
     "enzyme": "^2.6.0",
     "eslint": "^3.11.0",
     "eslint-config-airbnb": "^13.0.0",
@@ -74,7 +76,6 @@
     "react-addons-css-transition-group": "^15.4.1",
     "react-addons-test-utils": "^15.4.1",
     "react-syntax-highlighter": "^3.0.0",
-    "rimraf": "^2.5.4",
     "rollup": "^0.36.4",
     "rollup-plugin-babel": "^2.6.1",
     "sass-loader": "^4.0.2",
