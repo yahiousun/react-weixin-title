@@ -9,13 +9,13 @@ module.exports = {
   context: path.join(__dirname, 'example'),
   devtool: 'sourcemap',
   entry: {
-    js: ['babel-polyfill', './index.jsx'],
-    vendor: ['react', 'react-router', 'react-dom', 'react-addons-css-transition-group', 'react-syntax-highlighter'],
+    js: ['./index.jsx'],
+    vendor: ['react', 'react-router', 'react-dom', 'react-syntax-highlighter'],
   },
   output: {
     path: path.resolve(__dirname, 'dist/example'),
-    filename: "[hash].bundle.js",
-    chunkFilename: "[id].[hash].bundle.js",
+    filename: "bundle.[chunkhash].js",
+    chunkFilename: "[id].bundle.[chunkhash].js",
   },
   module: {
     loaders: [
@@ -29,13 +29,13 @@ module.exports = {
         },
       }, {
         test: /\.scss$/,
-        loader: 'style!css!postcss!sass',
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!sass-loader'),
       }, {
         test: /\.css/,
-        loader: ExtractTextPlugin.extract('style', 'css', 'postcss'),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader'),
       }, {
-        test: /\.(png|jpg)$/,
-        loader: 'url?limit=8192',
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'url?limit=10000!img?progressive=true'
       },
     ],
   },
@@ -49,13 +49,14 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin('vendor', '[hash].vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.[hash].js'),
+    new ExtractTextPlugin('app.[contenthash].css'),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'example/index.html'),
       favicon: path.join(__dirname, 'example/favicon.ico'),
     }),
   ],
   resolve: {
-    extensions: ['', '.jsx', '.js', '.json'],
+    extensions: ['', '.jsx', '.js'],
   },
 };

@@ -33,7 +33,7 @@ module.exports = {
         test: /\.css/,
         loader: ExtractTextPlugin.extract('style', 'css', 'postcss'),
       }, {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jp[e]g)$/,
         loader: 'url?limit=25000',
       },
     ],
@@ -43,7 +43,7 @@ module.exports = {
     new webpack.DefinePlugin({
       DEBUG: process.env.NODE_ENV !== 'production',
     }),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'example/index.html'),
       favicon: path.join(__dirname, 'example/favicon.ico'),
@@ -51,6 +51,6 @@ module.exports = {
     new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
   ],
   resolve: {
-    extensions: ['', '.jsx', '.js', '.json'],
+    extensions: ['', '.jsx', '.js'],
   },
 };
