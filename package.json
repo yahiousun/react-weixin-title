@@ -17,7 +17,7 @@
   "scripts": {
     "build": "npm run build:lib && npm run build:example",
     "build:lib": "node tools/build",
-    "build:example": "del ./dist/example && webpack --config webpack.config.example.js --progress --colors -p",
+    "build:example": "del-cli ./dist/example && webpack --config webpack.config.example.js --progress --colors -p",
     "lint": "eslint ./src ./example ./test",
     "start": "webpack-dev-server --config webpack.config.dev.js --hot --inline --progress --colors --port 8080 --host localhost",
     "test": "karma start"
