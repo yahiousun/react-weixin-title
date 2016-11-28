@@ -33,7 +33,7 @@ module.exports = {
         test: /\.css/,
         loader: ExtractTextPlugin.extract('style', 'css', 'postcss'),
       }, {
-        test: /\.(png|jp[e]g)$/,
+        test: /\.(png|jpe?g)$/,
         loader: 'url?limit=25000',
       },
     ],

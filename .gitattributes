@@ -7,11 +7,11 @@
 # (this is required in order to prevent newline related issues like,
 # for example, after the build script is run)
 .*      text eol=lf
-*.scss   text eol=lf
+*.scss  text eol=lf
 *.css   text eol=lf
 *.ejs   text eol=lf
 *.js    text eol=lf
-*.jsx    text eol=lf
+*.jsx   text eol=lf
 *.md    text eol=lf
 *.txt   text eol=lf
 *.json  text eol=lf

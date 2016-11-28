@@ -7,7 +7,7 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, 'example'),
-  devtool: 'sourcemap',
+  devtool: 'source-map',
   entry: {
     js: ['./index.jsx'],
     vendor: ['react', 'react-router', 'react-dom', 'react-syntax-highlighter'],
@@ -25,7 +25,7 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           cacheDirectory: true,
-          presets: ['latest', 'stage-0', 'react'],
+          presets: ['latest', 'stage-0', 'react']
         },
       }, {
         test: /\.scss$/,
