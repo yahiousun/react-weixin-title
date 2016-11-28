@@ -39,7 +39,7 @@ This component can be used on weixin for iOS as well.</p>
           <div className="show-lg">
             <h2>View on mobile</h2>
             <p>
-              <img src={require('../../images/qrcode.jpeg')} width="200" height="200" />
+              <img src={require('../../images/qrcode.jpg')} width="200" height="200" />
             </p>
           </div>
           <h2>References</h2>

@@ -14,7 +14,6 @@ class GettingStarted extends React.Component {
           <SyntaxHighlighter language='bash' style={monokaiSublime}>
           $ npm install react-weixin-title --save
           </SyntaxHighlighter>
-          <p>Dependencies:<br />React >= 0.14.0<br />React-dom >= 0.14.0</p>
           <h2>Example</h2>
           <h3>Assuming you use something like <a href="https://github.com/ReactTraining/react-router" target="_blank">react-router</a></h3>
           <SyntaxHighlighter language='javascript' style={monokaiSublime}>
